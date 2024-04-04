@@ -17,6 +17,7 @@ export class Pokemon {
     return `
   
   <div class="card">
+  <button onclick="app.SandboxPokemonController.savePokemonToList()" class="btn btn-primary position-absolute top-1"><i class="mdi mdi-book-plus"></i></button>
   <h1>${this.name}</h1>
   <hr />
   <img src="${this.img}" alt="">
@@ -40,4 +41,17 @@ export class Pokemon {
     </button>
     `
   }
+
+  get MyPokemonListTemplate() {
+    return `
+  <div class="row align-items-center border-bottom border-primary pb-1 mb-2 selectable">
+  <div class="col-1">
+    <input type="checkbox">
+  </div>
+  <div class="col">${this.name}</div>
+  
+  `
+  }
+
+
 }
