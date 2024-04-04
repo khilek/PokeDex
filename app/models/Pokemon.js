@@ -6,7 +6,7 @@ export class Pokemon {
   constructor(data) {
     this.name = data.name
     this.nickname = data.nickname
-    this.img = data.sprites.front_default
+    this.img = data.img ? data.img : data.sprites.front_default
     this.weight = data.weight
     this.height = data.height
     this.types = data.types[0].type.name
