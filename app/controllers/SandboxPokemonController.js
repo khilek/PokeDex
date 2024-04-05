@@ -20,12 +20,13 @@ export class SandboxPokemonController {
       console.error(error)
     }
   }
+
   async savePokemonToList() {
     try {
       await sandboxPokemonService.savePokemonToList()
     } catch (error) {
       Pop.toast("Can't save Pokemon")
-      console.error(error)
+      throw error
     }
   }
 
@@ -38,3 +39,12 @@ export class SandboxPokemonController {
 
 
 }
+
+
+
+
+
+
+
+
+

@@ -8,9 +8,18 @@ export class Pokemon {
     this.nickname = data.nickname
     this.img = data.img ? data.img : data.sprites.front_default
     this.weight = data.weight
-    this.height = data.height
-    this.types = data.types[0].type.name
+    this.height = data.height;
+
+    const maybeTypeObj = data.types[0].type;
+    if (maybeTypeObj != undefined) {
+      this.types = maybeTypeObj.name;
+    }
+    else {
+      this.types = data.types[0];
+    }
+
     this.creatorId = data.creatorId
+
   }
 
   get ActivePokemonCard() {
